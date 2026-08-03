@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: task-manager-project
+  namespace: argocd
+spec:
+  description: "Project scoping the task-manager 3-tier microservices application"
+  sourceRepos:
+    - "https://github.com/<YOUR_GITHUB_ORG>/task-manager-gitops.git"
+  destinations:
+    - namespace: task-manager
+      server: https://kubernetes.default.svc
+    - namespace: monitoring
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

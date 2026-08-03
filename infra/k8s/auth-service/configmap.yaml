@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-service-config
+  namespace: task-manager
+data:
+  PORT: "4000"
+  NODE_ENV: "production"
+  JWT_EXPIRES_IN: "1d"

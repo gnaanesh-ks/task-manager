@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow | Task Manager</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">TaskFlow</div>
+    <nav id="nav-auth-state"></nav>
+  </header>
+
+  <main class="container">
+    <section id="auth-view" class="card hidden">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <h2>Welcome back</h2>
+        <label>Email</label>
+        <input type="email" id="login-email" required>
+        <label>Password</label>
+        <input type="password" id="login-password" required>
+        <button type="submit" class="btn-primary">Login</button>
+        <p class="error-msg" id="login-error"></p>
+      </form>
+
+      <form id="signup-form" class="auth-form hidden">
+        <h2>Create an account</h2>
+        <label>Username</label>
+        <input type="text" id="signup-username" required>
+        <label>Email</label>
+        <input type="email" id="signup-email" required>
+        <label>Password</label>
+        <input type="password" id="signup-password" required minlength="6">
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <p class="error-msg" id="signup-error"></p>
+      </form>
+    </section>
+
+    <section id="app-view" class="hidden">
+      <div class="card task-input-card">
+        <h2>New Task</h2>
+        <form id="task-form">
+          <input type="text" id="task-title" placeholder="Task title" required>
+          <textarea id="task-description" placeholder="Description (optional)"></textarea>
+          <select id="task-priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit" class="btn-primary">Add Task</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="filter-bar">
+          <h2>My Tasks</h2>
+          <select id="filter-status">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <ul id="task-list"></ul>
+        <p id="empty-state" class="hidden">No tasks yet. Add one above!</p>
+      </div>
+    </section>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Terraform state and local artifacts
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+terraform.tfvars
+
+# Kubernetes secrets
+**/secret.yaml
+CLAUDE.md
