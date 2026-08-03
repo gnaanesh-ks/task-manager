@@ -26,6 +26,7 @@ grafana:
   persistence:
     enabled: true
     size: 5Gi
+    storageClassName: gp2
   defaultDashboardsEnabled: true
   dashboardProviders:
     dashboardproviders.yaml:
