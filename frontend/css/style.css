@@ -32,7 +32,8 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.brand { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+.brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+.brand-logo { flex-shrink: 0; }
 
 #nav-auth-state { display: flex; align-items: center; gap: 1rem; }
 

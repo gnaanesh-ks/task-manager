@@ -12,8 +12,8 @@ const API_CONFIG = {
   TASKS_BASE: (window.__ENV && window.__ENV.TASKS_API_URL) || "/api/tasks",
 };
 
-const TOKEN_KEY = "taskflow_token";
-const USER_KEY = "taskflow_user";
+const TOKEN_KEY = "taskmanager_token";
+const USER_KEY = "taskmanager_user";
 
 const Storage = {
   getToken: () => localStorage.getItem(TOKEN_KEY),
